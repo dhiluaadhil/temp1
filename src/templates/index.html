@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI | Legal Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <main class="glass-container">
+        <header>
+            <div class="logo">
+                <span class="gradient-text">Agentic</span>Legal
+            </div>
+            <p>Intelligent Intellectual Property Drafting</p>
+        </header>
+
+        <section class="input-section">
+            <label for="patentInput">Describe your invention or patent requirements:</label>
+            <textarea id="patentInput" placeholder="e.g. I need a software patent application for a new machine learning algorithm that predicts stock prices using transformer networks..."></textarea>
+            <button id="generateBtn" class="glow-btn">
+                <span class="btn-text">Generate Legal Document</span>
+                <div class="loader hidden"></div>
+            </button>
+        </section>
+
+        <section id="resultsSection" class="results-section hidden">
+            <div class="card logs-card">
+                <h3>Agent Thought Process</h3>
+                <pre id="agentLogs"></pre>
+            </div>
+            
+            <div class="card output-card">
+                <h3>Final Document</h3>
+                <div id="finalDocument" class="document-content"></div>
+                <button id="downloadPdfBtn" class="glow-btn hidden" style="margin-top: 20px; width: 100%;">Download PDF</button>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
